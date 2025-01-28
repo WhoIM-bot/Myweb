@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/contak.css"> <!-- Tambahkan untuk loading -->
+    <title>Contact</title>
+</head>
+<body>
+  
+
+    <!-- Konten Utama -->
+    <header>
+        <div class="logo">Dansstore</div>
+        <div class="menu-toggle" id="menu-toggle">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <nav id="nav">
+            <a href="index.html"><img src="home.png" alt="Home" class="menu-icon">Home</a>
+            <a href="produk.html"><img src="yu.png" alt="Produk" class="menu-icon">Produk</img>
+            <a href="#"><img src="community-icon.png" alt="Komunitas" class="menu-icon">Komunitas</a>
+            <a href="contak.html"><img src="kontak.png" alt="Contact" class="menu-icon">Contact</a>
+        </nav>
+    </header>
+
+    <div class="marquee">
+      <span> DANS STORE MENYEDIAKAN REKBER - CV SALDO - WARNET || MENYEDIAKAN JUGA JASA DESAIN LOGO JB, LOGO FF, LOGO ANIME, LOGO MASKOT, BROSUR, POSTER, SAMPUL FB/WA, POSTER TES KEAMANAN FB, DLL..</span>
+    </div>
+
+    <br>
+<div class="form-container">
+    <h2>Contact Us</h2>
+    <form action="https://formspree.io/f/mvgojdyk" method="POST">
+      <label for="email">Email:</label>
+      <input type="email" name="email" id="email" placeholder="masukan email" required>
+
+       <label for="name">Name:</label>
+      <input type="name" name="name" id="name" placeholder="masukan nama" required>
+
+      <label for="message">Your Message:</label>
+      <textarea name="message" id="message" placeholder="masukan pesan" required></textarea>
+
+      <button type="submit">Send</button>
+    </form>
+  </div>
+    <br>
+    <br>
+
+    <div class="content">
+        <h1>WELCOME TO MY WEBSITE</h1>
+        <p>Halo sobat, tetap semangat dalam menjalankan jual beli (JB) dan tetap amanah!</p>
+    </div>
+
+    <br><br><br><br>
+
+
+
+    <footer>
+        <p>&copy; 2024 DANS CORPORATION.</p>
+    </footer>
+
+  
+    <script>
+ 
+
+        // Menu toggle
+        const toggle = document.querySelector(".menu-toggle");
+        const nav = document.querySelector("nav");
+
+        toggle.addEventListener("click", () => {
+            nav.classList.toggle("menu-active");
+        });
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/peyek.css"> <!-- Tambahkan untuk loading -->
+    <title>HOME</title>
+</head>
+<body>
+    <!-- Loading Page -->
+      <div class="loading-container">
+        <div class="searching-text">
+            <span id="letter1">S</span>
+            <span id="letter2">T</span>
+            <span id="letter3">O</span>
+            <span id="letter4">R</span>
+            <span id="letter5">E</span>
+        </div>
+    </div>
+        
+    <div class="popup-container" id="popup">
+    <div class="popup-card">
+        <img src="rabit.jpg" alt="Promo Image" class="popup-image">
+        <h2>Welcome to Dansstore!</h2>
+        <p>promo terbatas</p>
+        <button id="close-popup">Close</button>
+    </div>
+</div>
+
+
+    <!-- Konten Utama -->
+    <header>
+        <div class="logo">Dansstore</div>
+        <div class="menu-toggle" id="menu-toggle">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <nav id="nav">
+            <a href="index.html"><img src="home.png" alt="Home" class="menu-icon">Home</a>
+            <a href="produk.html"><img src="yu.png" alt="Produk" class="menu-icon">Produk</img>
+            <a href="#"><img src="community-icon.png" alt="Komunitas" class="menu-icon">Komunitas</a>
+            <a href="testi.html"><img src="kontak.png" alt="Contact" class="menu-icon">Testimoni</a>
+            <a href="contact.html"><img src="kontak.png" alt="Contact" class="menu-icon">Contact</a>
+        </nav>
+    </header>
+
+    <div class="marquee">
+      <span> DANS STORE MENYEDIAKAN REKBER - CV SALDO - WARNET || MENYEDIAKAN JUGA JASA DESAIN LOGO JB, LOGO FF, LOGO ANIME, LOGO MASKOT, BROSUR, POSTER, SAMPUL FB/WA, POSTER TES KEAMANAN FB, DLL..</span>
+    </div>
+
+    <br>
+
+    <div class="hero-section">
+        <img src="rabit.jpg" alt="Hero Image" class="hero-image">
+    </div>
+
+    <div class="content">
+        <h1>WELCOME TO MY WEBSITE</h1>
+        <p>Halo sobat, tetap semangat dalam menjalankan jual beli (JB) dan tetap amanah!</p>
+    </div>
+
+    <br><br><br><br>
+
+    <div class="gallery-container">
+        <div class="gallery-item"><img src="jy.jpg" alt="Photo 1"></div>
+        <div class="gallery-item"><img src="lol.jpg" alt="Photo 2"></div>
+        <div class="gallery-item"><img src="sam.jpg" alt="Photo 3"></div>
+        <div class="gallery-item"><img src="pay.jpg" alt="Photo 4"></div>
+        <div class="gallery-item"><img src="pay.jpg" alt="Photo 4"></div>
+        <div class="gallery-item"><img src="pay.jpg" alt="Photo 4"></div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 My Website. DANS CORPORATION.</p>
+    </footer>
+
+    <div id="modal">
+        <img id="modal-image" alt="Modal Image">
+    </div>
+
+    <script>
+    // Array of random letters to display
+   const randomLetters = ['B', 'C', 'E', 'U', 'T', 'R', 'K', 'Q', 'J', 'L','O','X','H','I','W','F','Z','B', 'C', 'E'];
+
+// Function to generate random letters
+function getRandomLetter() {
+    const randomIndex = Math.floor(Math.random() * randomLetters.length);
+    return randomLetters[randomIndex];
+}
+
+// Function to animate the letters
+function animateLetters() {
+    const letters = document.querySelectorAll('.searching-text span');
+    let letterIndex = 0;
+
+    // Loop to replace each letter with random letters
+    const interval = setInterval(() => {
+        if (letterIndex < letters.length) {
+            letters[letterIndex].textContent = getRandomLetter();
+            letterIndex++;
+        } else {
+            clearInterval(interval);
+            // Start replacing with the correct letters after random letters
+            replaceWithCorrectLetters();
+        }
+    }, 100); // Update every 100 ms with a new random letter
+}
+
+// Function to replace random letters with the correct ones
+function replaceWithCorrectLetters() {
+    const correctLetters = ['S', 'T', 'O', 'R', 'E'];
+    let letterIndex = 0;
+
+    // Loop to replace each letter with the correct one
+    const interval = setInterval(() => {
+        if (letterIndex < correctLetters.length) {
+            document.querySelectorAll('.searching-text span')[letterIndex].textContent = correctLetters[letterIndex];
+            letterIndex++;
+        } else {
+            clearInterval(interval);
+            // After finishing, hide the loading screen after 1.5 seconds
+            setTimeout(() => {
+                document.querySelector(".loading-container").style.display = "none";
+            }, 1500);
+        }
+    }, 200); // Update every 200 ms to change to the correct letter
+}
+
+// Start the letter animation
+document.addEventListener('DOMContentLoaded', animateLetters);
+
+
+        // Menu toggle
+        const toggle = document.querySelector(".menu-toggle");
+        const nav = document.querySelector("nav");
+
+        toggle.addEventListener("click", () => {
+            nav.classList.toggle("menu-active");
+        });
+
+        // Image gallery click event
+        document.querySelectorAll('.gallery-item img').forEach(image => {
+            image.addEventListener('click', function() {
+                const modal = document.getElementById('modal');
+                const modalImage = document.getElementById('modal-image');
+                modalImage.src = this.src;
+                modal.classList.add('active');
+            });
+        });
+
+        // Close modal when clicked
+        document.getElementById('modal').addEventListener('click', function() {
+            this.classList.remove('active');
+        });
+        
+        // Popup functionality
+document.addEventListener('DOMContentLoaded', () => {
+    const popup = document.getElementById('popup');
+    const closePopup = document.getElementById('close-popup');
+
+    // Show popup after 2 seconds
+    setTimeout(() => {
+        popup.classList.add('active');
+    }, 2000);
+
+    // Close popup
+    closePopup.addEventListener('click', () => {
+        popup.classList.remove('active');
+    });
+});
+
+    </script>
+</body>
+</html>
