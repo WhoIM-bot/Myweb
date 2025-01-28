@@ -1,0 +1,280 @@
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background-color: #1E9;
+            color: #fff;
+            box-shadow: 4px 4px 0 #000;
+            position: relative;
+            z-index: 10; /* Ensure the header is above other content */
+        }
+        
+                       .marquee {
+  margin: 10px 0 0;
+  overflow: hidden;
+  white-space: nowrap;
+  box-shadow: 4px 4px 0px #000000;
+  background-color: #DC143C;
+  color: #ffffff;
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 10px;
+  border: 3px solid #000000;
+}
+
+.marquee span {
+  display: inline-block;
+  animation: scroll 30s linear infinite; /* Total durasi */
+  animation-timing-function: ease-in; /* Masuk cepat, keluar lambat */
+}
+
+@keyframes scroll {
+  10% {
+    transform: translateX(100%); /* Mulai di luar layar */
+  }
+  10% {
+    transform: translateX(0); /* Masuk dengan cepat */
+  }
+  100% {
+    transform: translateX(-100%); /* Keluar secara perlahan */
+  }
+}
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 0.3rem;
+            cursor: pointer;
+        }
+
+        .menu-toggle div {
+            width: 25px;
+            height: 3px;
+            background-color: #fff;
+        }
+
+        nav {
+    display: flex;
+    gap: 1rem; /* Jarak antar-kolom */
+    justify-content: center; /* Kolom menu di tengah */
+}
+
+nav a {
+    text-decoration: none;
+    color: #000;
+    background-color: #f2f2f2;
+    padding: 0.5rem; /* Padding konsisten */
+    border-radius: 8px;
+    box-shadow: 3px 3px 0 #000;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    font-size: 1rem; /* Ukuran font tetap */
+    display: flex; /* Menggunakan flex untuk penyelarasan */
+    align-items: center; /* Menyelaraskan gambar dan teks secara vertikal */
+    justify-content: flex-start; /* Membuat gambar dan teks rata kiri */
+    width: 140px; /* Lebar tetap untuk kolom */
+    text-align: left; /* Teks rata kiri */
+    gap: 0.5rem; /* Jarak antara gambar dan teks */
+}
+
+nav a img {
+    width: 20px; /* Ukuran gambar tetap */
+    height: 20px; /* Ukuran gambar tetap */
+    object-fit: contain; /* Memastikan gambar tidak terpotong */
+    flex-shrink: 0; /* Gambar tidak mengecil */
+}
+
+@media (max-width: 768px) {
+    nav {
+        flex-wrap: wrap; /* Kolom bisa turun ke baris baru */
+        gap: 0.5rem; /* Jarak antar-kolom lebih kecil */
+    }
+
+    nav a {
+        font-size: 0.9rem; /* Font responsif untuk tablet */
+        width: 120px; /* Lebar menyesuaikan */
+        gap: 0.4rem; /* Spasi antara gambar dan teks lebih kecil */
+        padding: 0.4rem;
+    }
+
+    nav a img {
+        width: 18px; /* Ukuran gambar lebih kecil untuk tablet */
+        height: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    nav {
+        flex-direction: column; /* Kolom vertikal untuk perangkat kecil */
+        gap: 0.5rem; /* Jarak antar-kolom tetap kecil */
+    }
+
+    nav a {
+        font-size: 0.85rem; /* Font responsif untuk smartphone */
+        width: 100%; /* Lebar penuh untuk smartphone */
+        padding: 0.6rem;
+    }
+
+    nav a img {
+        width: 16px; /* Ukuran gambar lebih kecil untuk smartphone */
+        height: 16px;
+    }
+}
+
+
+        nav a:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 5px 5px 0 #000;
+        }
+
+        .menu-icon {
+            width: 16px; 
+            height: 16px;
+            border-radius: 4px;
+            object-fit: cover;
+        }
+
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: flex;
+            }
+
+            nav {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                right: 2rem;
+                background-color: #1E9;
+                padding: 1rem;
+                gap: 1rem;
+                box-shadow: 4px 4px 0 #000;
+                z-index: 10; /* Ensure the menu is above other content */
+            }
+
+            nav.menu-active {
+                display: flex;
+            }
+
+            .menu-icon {
+                width: 14px;
+                height: 14px;
+            }
+        }
+
+
+
+
+        .content {
+            background-color: #fff;
+            padding: 2rem;
+            border: 2px solid #1E9;
+            box-shadow: 4px 4px 0 #000;
+            max-width: 800px;
+            margin: 0 auto;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+      
+        footer {
+            background-color: #1E9;
+            color: #fff;
+            padding: 1rem;
+            text-align: center;
+            border-top: 4px solid #000;
+        }
+
+
+        /* Form Styling */
+    .form-container {
+      background: #ffffff;
+      border: 4px solid #000000;
+      box-shadow: 8px 8px 0px #32CD32, 8px 8px 0px 0px #000000 inset;
+      width: 90%;
+      max-width: 400px;
+      padding: 20px;
+      box-sizing: border-box;
+      text-align: left;
+      margin: 20px auto;
+    }
+
+    .form-container h2 {
+      margin-top: 0;
+      font-size: 1.5rem;
+      text-transform: uppercase;
+      color: #000000;
+    }
+
+    label {
+      font-size: 1rem;
+      font-weight: bold;
+      display: block;
+      margin-bottom: 8px;
+      color: #000000;
+    }
+
+    input, textarea {
+      width: calc(100% - 16px);
+      margin-bottom: 20px;
+      padding: 10px;
+      border: 3px solid #000000;
+      box-shadow: 4px 4px 0px #32CD32;
+      background-color: #fff;
+      font-size: 1rem;
+      outline: none;
+    }
+
+    textarea {
+      resize: none;
+      height: 100px;
+    }
+
+    button {
+      background-color: #00FF00;
+      color: #ffffff;
+      border: 3px solid #000000;
+      padding: 10px 20px;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 4px 4px 0px #000000;
+      transition: transform 0.2s ease-in-out;
+    }
+
+    button:hover {
+      transform: translate(-2px, -2px);
+    }
+
+    @media (max-width: 600px) {
+      .header h1 {
+        font-size: 1.5rem;
+      }
+
+      .form-container {
+        padding: 15px;
+      }
+
+      button {
+        width: 100%;
+        padding: 12px;
+      }
+    }
